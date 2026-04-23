@@ -101,3 +101,111 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: |
+  Portafolio web responsivo e interactivo para Alfonso Martín, game developer, con temática
+  de mapaches (pixel art retro + bosque). Mapache que sigue el cursor. Formulario de
+  contacto con backend real.
+
+backend:
+  - task: "POST /api/contact — store contact message in MongoDB"
+    implemented: true
+    working: true
+    file: "backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        -working: "NA"
+        -agent: "main"
+        -comment: "New endpoint. Accepts {name, email, subject?, message}. Validates with Pydantic + EmailStr. Inserts into contact_messages collection with uuid id and utc timestamp. Returns {id, received_at, message: 'ok'}."
+        -working: true
+        -agent: "testing"
+        -comment: "✅ TESTED SUCCESSFULLY: All validation scenarios working correctly. POST /api/contact accepts valid data and returns 200 with {id, received_at, message: 'ok'}. Properly validates email format (422 for invalid), required fields (422 for missing name/message), and message length (422 for >2000 chars). Data successfully stored in MongoDB with UUID and timestamp."
+
+  - task: "GET /api/contact — list messages (admin helper)"
+    implemented: true
+    working: true
+    file: "backend/server.py"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+        -working: "NA"
+        -agent: "main"
+        -comment: "Returns up to 500 most recent messages, newest first."
+        -working: true
+        -agent: "testing"
+        -comment: "✅ TESTED SUCCESSFULLY: GET /api/contact returns 200 with list of contact messages. Messages are properly sorted newest first by received_at timestamp. Successfully retrieved the test message created during POST testing. Endpoint working as expected."
+
+  - task: "GET /api/ and /api/status round-trip (existing)"
+    implemented: true
+    working: true
+    file: "backend/server.py"
+    stuck_count: 0
+    priority: "low"
+    needs_retesting: false
+    status_history:
+        -working: "NA"
+        -agent: "main"
+        -comment: "Smoke check — ensure existing routes still work after refactor."
+        -working: true
+        -agent: "testing"
+        -comment: "✅ TESTED SUCCESSFULLY: Both existing endpoints working correctly. GET /api/ returns 200 with message field. POST /api/status + GET /api/status round-trip working perfectly - created status record with UUID and timestamp, successfully retrieved it in the list. No regression issues detected."
+
+frontend:
+  - task: "Contact form wired to POST /api/contact"
+    implemented: true
+    working: "NA"
+    file: "frontend/src/components/Contact.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        -working: "NA"
+        -agent: "main"
+        -comment: "Replaced localStorage mock with axios POST to REACT_APP_BACKEND_URL + /api/contact. Toasts for success/error."
+
+metadata:
+  created_by: "main_agent"
+  version: "1.0"
+  test_sequence: 2
+  run_ui: false
+
+test_plan:
+  current_focus: []
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+agent_communication:
+    -agent: "main"
+    -message: |
+        Please test the contact API:
+          1. POST /api/contact with valid JSON { name, email, subject, message } -> expect 200 and id+received_at returned.
+          2. POST /api/contact with invalid email -> expect 422.
+          3. POST /api/contact missing required fields (no name / no message) -> expect 422.
+          4. POST /api/contact with overly long message (>2000 chars) -> expect 422.
+          5. GET /api/contact -> expect list including the message created in step 1 (most recent first).
+          6. GET /api/ -> expect 200 with message field.
+          7. POST /api/status + GET /api/status (existing contract) -> expect round-trip works.
+        Backend base URL: use REACT_APP_BACKEND_URL from frontend/.env with /api prefix.
+    -agent: "testing"
+    -message: |
+        ✅ BACKEND TESTING COMPLETE - ALL TESTS PASSED (7/7)
+        
+        Comprehensive testing completed for all backend API endpoints:
+        
+        🎯 Contact API Testing Results:
+        • POST /api/contact (valid data) → ✅ Returns 200 with {id, received_at, message: "ok"}
+        • POST /api/contact (invalid email) → ✅ Returns 422 with proper validation error
+        • POST /api/contact (missing name) → ✅ Returns 422 with field required error
+        • POST /api/contact (missing message) → ✅ Returns 422 with field required error  
+        • POST /api/contact (>2000 char message) → ✅ Returns 422 with length validation error
+        • GET /api/contact → ✅ Returns 200 with message list, sorted newest first
+        
+        🎯 Existing Endpoints Testing Results:
+        • GET /api/ → ✅ Returns 200 with message field
+        • POST /api/status + GET /api/status → ✅ Round-trip working perfectly
+        
+        All validation, data persistence, and response formatting working correctly. MongoDB integration functional. No critical issues found.

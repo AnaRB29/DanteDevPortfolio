@@ -147,53 +147,122 @@ export const experience = [
   }
 ];
 
-export const testimonials = [
+export const companies = [
   {
     id: 1,
-    name: "Laura Vega",
-    role: "Game Director, Hidden Burrow",
-    text: "Alfonso tiene un talento raro: resuelve problemas técnicos complejos con soluciones elegantes y además sabe comunicarlas al equipo. Su código es tan limpio como el pelaje de un mapache bien bañado.",
-    avatarBg: "#6B4423"
+    name: "Hidden Burrow Studios",
+    industry: "AA Game Studio",
+    period: "2023 - Presente",
+    description: "Estudio especializado en juegos narrativos de mundo abierto. Colaboro liderando sistemas de gameplay y IA.",
+    color: "#2D4A2B",
+    initials: "HB"
   },
   {
     id: 2,
-    name: "Diego Ruiz",
-    role: "Art Director, Moonlit Games",
-    text: "Las herramientas que construyó cambiaron por completo nuestro flujo de trabajo. Cada artista del estudio le debe horas de su vida recuperadas.",
-    avatarBg: "#2D4A2B"
+    name: "Moonlit Games",
+    industry: "Indie Studio",
+    period: "2021 - 2023",
+    description: "Estudio indie enfocado en experiencias cozy. Construí el toolkit interno para el equipo de arte y narrativa.",
+    color: "#6B4423",
+    initials: "MG"
   },
   {
     id: 3,
-    name: "Marina Sol",
-    role: "Indie Dev, Pixel Forest",
-    text: "Trabajar con Alfonso es como tener a un mapache curioso en tu equipo: siempre explorando, siempre encontrando la ruta más creativa al objetivo.",
-    avatarBg: "#D97706"
+    name: "Pixel Forest Indie",
+    industry: "Indie Collective",
+    period: "2020 - 2021",
+    description: "Colectivo indie de desarrolladores. Programé gameplay 2D en Unity para dos títulos publicados en Steam.",
+    color: "#D97706",
+    initials: "PF"
+  },
+  {
+    id: 4,
+    name: "Lumen Interactive",
+    industry: "Serious Games",
+    period: "2022",
+    description: "Freelance. Desarrollo de prototipo educativo para museo de ciencias: simulación interactiva de ecosistemas.",
+    color: "#3F5A3A",
+    initials: "LI"
+  },
+  {
+    id: 5,
+    name: "Crafty Bear Games",
+    industry: "Mobile Studio",
+    period: "2021",
+    description: "Consultoría técnica para optimización de rendimiento en un título móvil de puzzles con millones de descargas.",
+    color: "#8B5A2B",
+    initials: "CB"
+  },
+  {
+    id: 6,
+    name: "NightOwl Arcade",
+    industry: "Arcade Publisher",
+    period: "2020",
+    description: "Port y adaptación de un arcade retro a PC moderno. Integración de leaderboards online y logros.",
+    color: "#4A6B3A",
+    initials: "NO"
   }
 ];
 
-export const devlogs = [
+export const events = [
   {
     id: 1,
-    title: "Cómo construí un sistema de IA sigilosa para mi mapache ladrón",
-    date: "12 Jun 2024",
-    readTime: "8 min",
-    excerpt: "Un desglose completo del sistema de percepción enemiga en Nocturnal: conos de visión, memoria auditiva y máquinas de estado jerárquicas.",
-    tag: "Gameplay"
+    title: "Global Game Jam 2024",
+    role: "Participante - Gameplay Programmer",
+    date: "26-28 Ene 2024",
+    location: "Madrid, España",
+    description: "48 horas creando un prototipo en equipo sobre el tema 'Make me laugh'. Nuestro juego de mapaches comediantes quedó en el top 10 local.",
+    tag: "Game Jam",
+    icon: "trophy"
   },
   {
     id: 2,
-    title: "Pixel Perfect en Unity: guía definitiva",
-    date: "28 Abr 2024",
-    readTime: "12 min",
-    excerpt: "Cámara, filtros, texturas y snapping. Todo lo que aprendí haciendo Trash Panda Odyssey para que tu pixel art no se deforme.",
-    tag: "Tutorial"
+    title: "Gamelab Barcelona 2023",
+    role: "Ponente - 'Pixel Perfect en motores modernos'",
+    date: "28-30 Jun 2023",
+    location: "Barcelona, España",
+    description: "Charla técnica sobre técnicas de renderizado pixel art en Unity y Unreal frente a una audiencia de 200+ desarrolladores.",
+    tag: "Conferencia",
+    icon: "mic"
   },
   {
     id: 3,
-    title: "Editor Tools: ahorrando 40% del tiempo del equipo",
-    date: "15 Feb 2024",
-    readTime: "6 min",
-    excerpt: "La filosofía detrás de Pixel Forge y cómo entender el workflow del artista cambió mi forma de programar herramientas.",
-    tag: "Tools"
+    title: "Ludum Dare 54",
+    role: "Solo Developer",
+    date: "Oct 2023",
+    location: "Online",
+    description: "48h en solitario con tema 'Limited Space'. Publicado 'Tiny Woods Jam' en itch.io, puntuación 4.3/5 en categoría de innovación.",
+    tag: "Game Jam",
+    icon: "trophy"
+  },
+  {
+    id: 4,
+    title: "Unity Unite Madrid 2023",
+    role: "Asistente + Workshop DOTS",
+    date: "15 Mar 2023",
+    location: "Madrid, España",
+    description: "Workshop intensivo de Unity DOTS y ECS. Aplicado posteriormente al sistema de multitudes de Trash Panda Odyssey.",
+    tag: "Workshop",
+    icon: "book"
+  },
+  {
+    id: 5,
+    title: "IndieDevDay 2022",
+    role: "Expositor - Demo 'Nocturnal'",
+    date: "8-9 Oct 2022",
+    location: "Barcelona, España",
+    description: "Stand propio mostrando demo jugable de Nocturnal. Ganador del premio 'Mejor Sigilo Indie' del evento.",
+    tag: "Expo",
+    icon: "award"
+  },
+  {
+    id: 6,
+    title: "GameDevMeetup Madrid",
+    role: "Organizador mensual",
+    date: "2021 - Presente",
+    location: "Madrid, España",
+    description: "Co-organizo meetups mensuales para la comunidad local de desarrolladores: charlas, playtest nights y networking.",
+    tag: "Comunidad",
+    icon: "users"
   }
 ];

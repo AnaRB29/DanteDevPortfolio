@@ -1,7 +1,11 @@
 import { useState } from "react";
+import axios from "axios";
 import { profile } from "../data/mock";
 import { Send, Mail, MapPin, Github, Linkedin, Twitter, Gamepad2 } from "lucide-react";
 import { useToast } from "../hooks/use-toast";
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 const socialIcons = {
   GitHub: Github,
@@ -17,7 +21,7 @@ const Contact = () => {
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) {
       toast({
@@ -28,18 +32,23 @@ const Contact = () => {
       return;
     }
     setSending(true);
-    // Mocked submission (saved in localStorage for now)
-    setTimeout(() => {
-      const stored = JSON.parse(localStorage.getItem("raccoon_messages") || "[]");
-      stored.push({ ...form, date: new Date().toISOString() });
-      localStorage.setItem("raccoon_messages", JSON.stringify(stored));
-      setSending(false);
+    try {
+      await axios.post(`${API}/contact`, form);
       setForm({ name: "", email: "", subject: "", message: "" });
       toast({
         title: "¡Mensaje enviado! 🌲",
         description: "El mapache llevará tu mensaje. Te responderé pronto."
       });
-    }, 800);
+    } catch (err) {
+      const detail = err?.response?.data?.detail;
+      toast({
+        title: "No se pudo enviar",
+        description: typeof detail === "string" ? detail : "Revisa tus datos e inténtalo de nuevo.",
+        variant: "destructive"
+      });
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
