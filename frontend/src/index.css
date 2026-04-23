@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #FBF6E9;
+  color: #1F2937;
+}
+
+code {
+  font-family: 'VT323', source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+@layer base {
+  :root {
+    --background: 45 60% 95%;
+    --foreground: 0 0% 12%;
+    --card: 45 60% 95%;
+    --card-foreground: 0 0% 12%;
+    --popover: 45 60% 95%;
+    --popover-foreground: 0 0% 12%;
+    --primary: 118 27% 23%;
+    --primary-foreground: 45 60% 95%;
+    --secondary: 30 48% 28%;
+    --secondary-foreground: 45 60% 95%;
+    --muted: 45 30% 88%;
+    --muted-foreground: 0 0% 35%;
+    --accent: 29 91% 44%;
+    --accent-foreground: 45 60% 95%;
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 45 60% 95%;
+    --border: 118 27% 15%;
+    --input: 45 30% 80%;
+    --ring: 118 27% 23%;
+    --radius: 0rem;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground; }
+}
