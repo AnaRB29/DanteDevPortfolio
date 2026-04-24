@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { skills } from "../data/mock";
 import { Code2, Cpu, Wrench, Sparkles } from "lucide-react";
+import { useLang, pick } from "../i18n/LanguageContext";
+import { translations } from "../i18n/translations";
 
 const categoryIcons = {
   "Lenguajes": Code2,
@@ -10,6 +12,8 @@ const categoryIcons = {
 };
 
 const Skills = () => {
+  const { lang } = useLang();
+  const t = translations[lang];
   const categories = [...new Set(skills.map((s) => s.category))];
   const [active, setActive] = useState(categories[0]);
   const filtered = skills.filter((s) => s.category === active);
@@ -21,18 +25,19 @@ const Skills = () => {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-2 h-2 bg-[#D54527]" />
-              <span className="pixel-font text-[10px] text-[#B68669]">CHAPTER 02</span>
+              <span className="pixel-font text-[10px] text-[#B68669]">{t.skills.chapter}</span>
             </div>
             <h2 className="pixel-font text-[22px] md:text-[30px] text-[#271914] section-title-underline">
-              Inventario
+              {t.skills.title}
             </h2>
             <p className="retro-font text-[20px] text-[#B68669] mt-4 max-w-xl">
-              Mis objetos equipados. Cada uno mejorado a base de proyectos reales y muchas horas de prueba y error.
+              {t.skills.subtitle}
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
             {categories.map((cat) => {
               const Icon = categoryIcons[cat] || Sparkles;
+              const label = t.skills.categories[cat] || cat.toUpperCase();
               return (
                 <button
                   key={cat}
@@ -44,7 +49,7 @@ const Skills = () => {
                   }`}
                 >
                   <Icon size={14} />
-                  {cat.toUpperCase()}
+                  {label}
                 </button>
               );
             })}
@@ -52,8 +57,8 @@ const Skills = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {filtered.map((s) => (
-            <SkillBar key={s.name} skill={s} />
+          {filtered.map((s, i) => (
+            <SkillBar key={i} skill={s} lang={lang} />
           ))}
         </div>
       </div>
@@ -61,13 +66,13 @@ const Skills = () => {
   );
 };
 
-const SkillBar = ({ skill }) => {
-  // Segmented pixel bar (10 cells)
+const SkillBar = ({ skill, lang }) => {
   const cells = Array.from({ length: 10 }, (_, i) => i < Math.round(skill.level / 10));
+  const displayName = pick(skill.name, lang);
   return (
     <div className="bg-[#FBF6E9] border-[3px] border-[#271914] p-5 pixel-shadow">
       <div className="flex justify-between items-baseline mb-3">
-        <span className="pixel-font text-[11px] text-[#271914]">{skill.name}</span>
+        <span className="pixel-font text-[11px] text-[#271914]">{displayName}</span>
         <span className="retro-font text-[18px] text-[#D54527]">{skill.level}/100</span>
       </div>
       <div className="flex gap-1">

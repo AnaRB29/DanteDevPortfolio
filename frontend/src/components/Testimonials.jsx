@@ -1,76 +1,12 @@
 import { companies } from "../data/mock";
 import { ExternalLink } from "lucide-react";
-
-// Pixel placeholder for Pink Bear Games
-const PinkBearPixel = () => {
-  const S = 8;
-  const px = (x, y, c, w = 1, h = 1) => (
-    <rect x={x * S} y={y * S} width={w * S} height={h * S} fill={c} shapeRendering="crispEdges" />
-  );
-  const PINK = "#F5A3C7";
-  const DARK = "#C97BA5";
-  const EYE = "#2D1B2E";
-  return (
-    <svg width="128" height="128" viewBox="0 0 112 112" className="pixelated">
-      {/* Ears */}
-      {px(1, 1, DARK, 2, 2)}
-      {px(10, 1, DARK, 2, 2)}
-      {px(2, 2, PINK, 1, 1)}
-      {px(10, 2, PINK, 1, 1)}
-      {/* Head */}
-      {px(2, 2, PINK, 9, 1)}
-      {px(1, 3, PINK, 11, 6)}
-      {px(2, 9, PINK, 9, 1)}
-      {/* Eyes */}
-      {px(3, 5, EYE, 2, 2)}
-      {px(8, 5, EYE, 2, 2)}
-      {px(4, 5, "#FBF6E9", 1, 1)}
-      {px(9, 5, "#FBF6E9", 1, 1)}
-      {/* Snout */}
-      {px(5, 7, "#FBF6E9", 3, 2)}
-      {px(6, 7, EYE, 1, 1)}
-    </svg>
-  );
-};
-
-const TextLogo = ({ label, color }) => (
-  <div
-    className="w-full h-full flex items-center justify-center px-4"
-    style={{ color }}
-  >
-    <span
-      className="pixel-font text-center leading-tight"
-      style={{
-        fontSize: label.length > 8 ? 14 : label.length > 6 ? 18 : 22,
-        textShadow: "3px 3px 0 rgba(26,47,26,0.15)"
-      }}
-    >
-      {label}
-    </span>
-  </div>
-);
+import { useLang } from "../i18n/LanguageContext";
+import { translations } from "../i18n/translations";
 
 const LogoCard = ({ company }) => {
-  const Content = () => {
-    if (company.type === "image") {
-      return (
-        <img
-          src={company.logo}
-          alt={company.name}
-          className="max-h-full max-w-full object-contain"
-          loading="lazy"
-        />
-      );
-    }
-    if (company.type === "pixel") return <PinkBearPixel />;
-    return <TextLogo label={company.label} color={company.color} />;
-  };
-
   const isLink = company.url && company.url !== "#";
   const Wrapper = isLink ? "a" : "div";
-  const wrapperProps = isLink
-    ? { href: company.url, target: "_blank", rel: "noreferrer" }
-    : {};
+  const wrapperProps = isLink ? { href: company.url, target: "_blank", rel: "noreferrer" } : {};
 
   return (
     <Wrapper
@@ -81,7 +17,12 @@ const LogoCard = ({ company }) => {
         className="h-36 flex items-center justify-center p-4 border-b-[3px] border-[#271914]"
         style={{ background: company.bg }}
       >
-        <Content />
+        <img
+          src={company.logo}
+          alt={company.name}
+          className="max-h-full max-w-full object-contain"
+          loading="lazy"
+        />
       </div>
       <div className="px-4 py-3 flex items-center justify-between bg-[#FBF6E9]">
         <span className="pixel-font text-[10px] text-[#271914] truncate mr-2">
@@ -96,7 +37,8 @@ const LogoCard = ({ company }) => {
 };
 
 const Companies = () => {
-  // Triple the list for a smooth seamless loop
+  const { lang } = useLang();
+  const t = translations[lang];
   const loop = [...companies, ...companies, ...companies];
 
   return (
@@ -104,13 +46,13 @@ const Companies = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-10 mb-10">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-2 h-2 bg-[#D54527]" />
-          <span className="pixel-font text-[10px] text-[#B68669]">CHAPTER 05</span>
+          <span className="pixel-font text-[10px] text-[#B68669]">{t.companies.chapter}</span>
         </div>
         <h2 className="pixel-font text-[22px] md:text-[30px] text-[#271914] section-title-underline">
-          Marcas &amp; estudios aliados
+          {t.companies.title}
         </h2>
         <p className="retro-font text-[20px] text-[#B68669] mt-4 max-w-2xl">
-          Equipos, clientes e instituciones con los que he desarrollado juegos, experiencias y herramientas. Cada logo es una aventura compartida.
+          {t.companies.subtitle}
         </p>
       </div>
 

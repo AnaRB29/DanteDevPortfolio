@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { LanguageProvider } from "./i18n/LanguageContext";
 import RaccoonCursor from "./components/RaccoonCursor";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -42,11 +43,13 @@ const HomePage = () => {
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-      </Routes>
-    </BrowserRouter>
+    <LanguageProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      </BrowserRouter>
+    </LanguageProvider>
   );
 }
 
