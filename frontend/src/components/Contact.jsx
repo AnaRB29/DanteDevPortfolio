@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { profile } from "../data/mock";
-import { Send, Mail, MapPin, Github, Linkedin, Twitter, Gamepad2 } from "lucide-react";
+import { Send, Mail, MapPin, Github, Linkedin, Twitter, Gamepad2, Globe } from "lucide-react";
 import { useToast } from "../hooks/use-toast";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -12,7 +12,8 @@ const socialIcons = {
   LinkedIn: Linkedin,
   Twitter: Twitter,
   "Itch.io": Gamepad2,
-  Email: Mail
+  Email: Mail,
+  Portfolio: Globe
 };
 
 const Contact = () => {

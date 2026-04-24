@@ -82,10 +82,11 @@ const Hero = () => {
               <span className="blink">▶</span> PLAYER 1 READY
             </span>
           </div>
-          <h1 className="pixel-font text-[#FBF6E9] leading-[1.35] text-[22px] sm:text-[30px] md:text-[38px] lg:text-[42px] mb-6">
+          <h1 className="pixel-font text-[#FBF6E9] leading-[1.35] text-[20px] sm:text-[26px] md:text-[32px] lg:text-[36px] mb-4">
             {profile.name}
           </h1>
-          <p className="retro-font text-[#D97706] text-[26px] md:text-[32px] leading-tight mb-6">
+          <div className="retro-font text-[18px] text-[#F5EFE0]/70 mb-6">{profile.alias}</div>
+          <p className="retro-font text-[#D97706] text-[24px] md:text-[28px] leading-tight mb-6">
             &gt; {profile.role}_
           </p>
           <p className="body-font text-[#F5EFE0]/90 text-base md:text-lg leading-relaxed max-w-xl mb-8">

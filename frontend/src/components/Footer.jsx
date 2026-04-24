@@ -9,8 +9,8 @@ const Footer = () => (
             <span className="pixel-font text-[10px] text-[#1A2F1A]">DD</span>
           </div>
           <div>
-            <div className="pixel-font text-[11px]">DANTE · GAMEDEV</div>
-            <div className="retro-font text-[16px] text-[#F5EFE0]/70">raccoon powered</div>
+            <div className="pixel-font text-[11px]">ALFONSO MARTÍN</div>
+            <div className="retro-font text-[16px] text-[#F5EFE0]/70">aka Dante · raccoon powered</div>
           </div>
         </div>
 
@@ -19,7 +19,7 @@ const Footer = () => (
         </div>
 
         <div className="md:text-right retro-font text-[16px] text-[#F5EFE0]/70">
-          © {new Date().getFullYear()} Dante. Todos los mapaches reservados.
+          © {new Date().getFullYear()} Alfonso Martín. Todos los mapaches reservados.
         </div>
       </div>
     </div>

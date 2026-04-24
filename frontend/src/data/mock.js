@@ -1,35 +1,44 @@
-// Real data sourced from https://portfolio-dante-five.vercel.app/
+// Data sourced from Alfonso Martín's real CV
 
 export const profile = {
-  name: "Dante",
-  role: "Videogame Development Engineer",
-  tagline: "Gameplay Programming & Tool Development",
-  bio: "Ingeniero en Desarrollo de Videojuegos con conocimiento en distintos lenguajes de programación. Destaco por mi capacidad para aprender rápidamente nuevas tecnologías y mantenerme a la vanguardia. Me apasiona la resolución creativa de problemas. Mi enfoque está en la Programación de Gameplay y el Desarrollo de Herramientas.",
-  location: "Remoto · Disponible",
+  name: "Alfonso Martín",
+  alias: "aka Dante",
+  role: "Unity Developer & Fullstack C#",
+  tagline: "Gameplay Systems · Clean Architecture · Performance",
+  bio: "Unity Developer & Fullstack C# con más de 4 años de experiencia. Experto en sistemas de gameplay, arquitectura limpia y optimización de rendimiento para proyectos comerciales. Historial comprobado de entrega de experiencias interactivas de alta calidad en PC, móvil y VR.",
+  location: "México",
   email: "dantedevfur@gmail.com",
-  availability: "Disponible para proyectos",
+  availability: "Disponible para colaboraciones",
   stats: [
-    { label: "Juegos publicados", value: "5" },
-    { label: "Estudios", value: "3" },
-    { label: "Plataformas", value: "PC · VR · Mobile" },
+    { label: "Años de experiencia", value: "4+" },
+    { label: "Estudios & clientes", value: "10+" },
+    { label: "Descargas mobile", value: "200K+" },
     { label: "Focus", value: "Gameplay · Tools" }
   ],
   socials: [
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/alfonso-martin-743222255", handle: "/in/alfonso-martin" },
     { name: "Itch.io", url: "https://trash-gamez.itch.io/", handle: "trash-gamez" },
+    { name: "Portfolio", url: "https://portfolio-dante-five.vercel.app/", handle: "dante-five" },
     { name: "Email", url: "mailto:dantedevfur@gmail.com", handle: "dantedevfur@gmail.com" }
   ]
 };
 
 export const skills = [
   { name: "C#", level: 95, category: "Lenguajes" },
-  { name: "C++", level: 80, category: "Lenguajes" },
-  { name: "Python", level: 75, category: "Lenguajes" },
+  { name: ".NET Core / Framework", level: 90, category: "Lenguajes" },
+  { name: "SQL", level: 80, category: "Lenguajes" },
+  { name: "C++", level: 70, category: "Lenguajes" },
   { name: "Unity", level: 95, category: "Motores" },
-  { name: "Unity XR / VR", level: 85, category: "Motores" },
-  { name: "Unity Mobile", level: 90, category: "Motores" },
-  { name: "Gameplay Programming", level: 95, category: "Disciplinas" },
-  { name: "Tool Development", level: 90, category: "Disciplinas" },
-  { name: "Procedural Generation", level: 80, category: "Disciplinas" }
+  { name: "Unity XR / VR / AR", level: 85, category: "Motores" },
+  { name: "Unreal Engine", level: 70, category: "Motores" },
+  { name: "Gameplay Systems", level: 95, category: "Disciplinas" },
+  { name: "Software Architecture", level: 90, category: "Disciplinas" },
+  { name: "SOLID · Design Patterns", level: 90, category: "Disciplinas" },
+  { name: "Optimización (Speed/Memory)", level: 90, category: "Disciplinas" },
+  { name: "Scrum / Agile", level: 85, category: "Disciplinas" },
+  { name: "Git & Pipelines", level: 90, category: "Herramientas" },
+  { name: "Editor Tools (Unity)", level: 85, category: "Herramientas" },
+  { name: "Debugging & Profiling", level: 90, category: "Herramientas" }
 ];
 
 export const projects = [
@@ -40,7 +49,7 @@ export const projects = [
     engine: "Unity",
     year: "2024",
     description: "Boomer-Shooter en Realidad Virtual. Controlas a Abraham Van Helsing, ex-cazador de monstruos que regresa de su retiro para detener al Dr. Frankenstein. Te enfrentas a oleadas de monstruos regenerados combinando biología y tecnología.",
-    role: "Gameplay Programmer @ TrashGamez",
+    role: "Gameplay Programmer @ Trash Gamez",
     tags: ["C#", "Unity", "VR", "Shooter"],
     color: "#6B4423",
     image: "https://portfolio-dante-five.vercel.app/media/VRHelsing.png",
@@ -56,7 +65,7 @@ export const projects = [
     engine: "Unity",
     year: "2023",
     description: "Juego arcade de conducción donde eres un repartidor de pizzas. Selecciona distintos tipos de vehículos y conduce de manera caótica por la ciudad entregando pedidos a contrarreloj.",
-    role: "Gameplay Programmer @ TrashGamez",
+    role: "Gameplay Programmer @ Trash Gamez",
     tags: ["C#", "Unity", "Mobile", "Arcade"],
     color: "#D97706",
     image: "https://portfolio-dante-five.vercel.app/media/CrazyDelivery.png",
@@ -70,8 +79,8 @@ export const projects = [
     genre: "Educativo · Narrativo",
     engine: "Unity",
     year: "2023",
-    description: "Juego educativo hecho para que padres, tutores y profesores puedan hablar acerca de los límites corporales con los niños. Incluye una guía para padres/tutores para acompañar el cuento.",
-    role: "Gameplay Programmer @ PinkBear Games",
+    description: "Juego educativo hecho para que padres, tutores y profesores puedan hablar acerca de los límites corporales con los niños. Incluye una guía para padres/tutores para acompañar el cuento. Proyecto galardonado con el Unity for Humanity award.",
+    role: "Unity Developer @ Pink Bear Games",
     tags: ["C#", "Unity", "Mobile", "Educativo"],
     color: "#E879A6",
     image: "https://portfolio-dante-five.vercel.app/media/Patito.png",
@@ -85,8 +94,8 @@ export const projects = [
     genre: "Idle · Casual",
     engine: "Unity",
     year: "2023",
-    description: "Juego idle casual que te lleva a un viaje de combinaciones y mutaciones. Combina y evoluciona distintas especies del Dou de Benja Calero, descubre mutaciones y colecciona cartas únicas.",
-    role: "Gameplay Programmer @ Arakuma Studios",
+    description: "Juego idle casual que te lleva a un viaje de combinaciones y mutaciones. Combina y evoluciona distintas especies del Dou de Benja Calero, descubre mutaciones y colecciona cartas únicas. Más de 200K descargas acumuladas.",
+    role: "Unity Developer @ Arakuma Studio",
     tags: ["C#", "Unity", "Mobile", "Idle"],
     color: "#3F5A3A",
     image: "https://portfolio-dante-five.vercel.app/media/DouEvoluciones.png",
@@ -100,8 +109,8 @@ export const projects = [
     genre: "Dungeon Crawler",
     engine: "Unity",
     year: "2024",
-    description: "Dungeon crawler lleno de acción que pone a prueba tus habilidades mientras luchas a través de mazmorras generadas proceduralmente con monstruos mortales, jefes poderosos y tesoros ocultos. Juega como Farfadox o un repertorio de héroes peculiares.",
-    role: "Gameplay Programmer @ Arakuma Studios",
+    description: "Dungeon crawler lleno de acción con mazmorras generadas proceduralmente, monstruos mortales, jefes poderosos y tesoros ocultos. Juega como Farfadox o un repertorio de héroes peculiares con habilidades únicas.",
+    role: "Unity Developer @ Arakuma Studio",
     tags: ["C#", "Unity", "Procedural", "RPG"],
     color: "#2D4A2B",
     image: "https://portfolio-dante-five.vercel.app/media/NetherDungeons.png",
@@ -114,117 +123,141 @@ export const projects = [
 export const experience = [
   {
     id: 1,
-    company: "TrashGamez",
-    role: "Gameplay Programmer",
-    period: "VR Helsing · Crazy Delivery",
-    description: "Desarrollo de gameplay para títulos arcade y de realidad virtual. Programación de mecánicas de combate, físicas y sistemas de progresión para PC, VR y mobile.",
+    company: "Cionet Solutions",
+    role: "Fullstack C# Developer",
+    period: "Oct 2025 — Mar 2026",
+    location: "Ciudad de México, México",
+    description: "Arquitectura y despliegue de sistemas escalables en C# y .NET Core (+15% uptime). Optimización del rendimiento de aplicaciones existentes reduciendo tiempos de respuesta en 25%. Colaboración en equipos Agile cross-funcionales (+10% sprint velocity). Revisiones de código y testing automatizado (-20% bugs post-release).",
+    icon: "code",
+    url: null
+  },
+  {
+    id: 2,
+    company: "Trash Gamez",
+    role: "Co-Founder / Programming Lead",
+    period: "Ago 2023 — Mar 2026",
+    location: "Ciudad de México, México",
+    description: "Liderazgo técnico de múltiples proyectos de videojuegos (3+ títulos desde prototipo a demo jugable). Diseño e implementación de la arquitectura core de gameplay en Unity (+20% eficiencia vía código modular). Dirección de equipo multidisciplinario bajo Agile (+15% sprint delivery). Pipelines técnicos y estándares de calidad (-30% tiempo de debug post-build).",
     icon: "briefcase",
     url: "http://trashgamez.net/"
   },
   {
-    id: 2,
-    company: "Arakuma Studios",
-    role: "Gameplay Programmer",
-    period: "Dou Evoluciones · Nether Dungeons",
-    description: "Implementación de sistemas idle, generación procedural de mazmorras, combate, IA de enemigos y pipelines de contenido para títulos mobile y PC.",
+    id: 3,
+    company: "Pink Bear Games",
+    role: "Unity Developer / Gameplay Programmer",
+    period: "May 2022 — Feb 2026",
+    location: "Playa del Carmen, México",
+    description: "Mecánicas y sistemas core de gameplay en C# y SQL (+15% estabilidad). Gestión de builds cross-platform y despliegue en múltiples storefronts (-20% errores de deployment). Rol clave en proyecto ganador del Unity for Humanity award. Soporte post-lanzamiento resolviendo 50+ bugs críticos y optimizaciones (+10% duración de sesión).",
+    icon: "wrench",
+    url: "https://pinkbeargames.com/"
+  },
+  {
+    id: 4,
+    company: "Arakuma Studio",
+    role: "Unity Developer / Gameplay Programmer",
+    period: "Dic 2023 — Abr 2025",
+    location: "Panamá, Panamá",
+    description: "Desarrollo de sistemas core de gameplay en Unity (C#) para títulos mobile de alto tráfico (+200K descargas acumuladas). Herramientas internas y editor extensions automatizando tareas repetitivas (-20% tiempo de integración de assets). Sistemas performance-critical (+15% FPS en dispositivos low-end). Features cross-platform iOS/Android con 99.9% crash-free rate.",
     icon: "code",
     url: "https://arakuma.io/"
   },
   {
-    id: 3,
-    company: "PinkBear Games",
-    role: "Gameplay Programmer",
-    period: "Patito",
-    description: "Desarrollo de un juego educativo y narrativo para mobile enfocado en sensibilizar sobre límites corporales, con una guía integrada para padres y tutores.",
-    icon: "wrench",
-    url: "https://pinkbeargames.com/"
+    id: 5,
+    company: "Universidad Amerike",
+    role: "B.S. Desarrollo de Software Interactivo e Ingeniería de Videojuegos",
+    period: "2025 — GPA 3.48",
+    location: "Ciudad de México, México",
+    description: "Licenciatura en Desarrollo de Software Interactivo e Ingeniería de Videojuegos, con minor en Game Engine Architecture (Unity). Proyectos académicos enfocados en sistemas de gameplay, arquitectura de motores y pipelines de producción.",
+    icon: "graduation",
+    url: "https://amerike.edu.mx/"
   }
 ];
 
-// Company logos for the carousel (local assets in /public/logos)
+// Brand cards — includes studios, clients and institutions.
+// `type: "image"` uses /public/logos files; `type: "text"` renders a pixel-style wordmark.
 export const companies = [
-  {
-    id: 1,
-    name: "TrashGamez",
-    url: "http://trashgamez.net/",
-    logo: "/logos/trashgamez.png",
-    bg: "#FBF6E9"
-  },
-  {
-    id: 2,
-    name: "Arakuma Studios",
-    url: "https://arakuma.io/",
-    logo: "/logos/arakuma.png",
-    bg: "#FBF6E9"
-  },
-  {
-    id: 3,
-    name: "PinkBear Games",
-    url: "https://pinkbeargames.com/",
-    logo: null, // Pixel placeholder rendered inline
-    bg: "#FBF6E9"
-  }
+  { id: 1, name: "Trash Gamez", url: "http://trashgamez.net/", type: "image", logo: "/logos/trashgamez.png", bg: "#FBF6E9" },
+  { id: 2, name: "Arakuma Studio", url: "https://arakuma.io/", type: "image", logo: "/logos/arakuma.png", bg: "#FBF6E9" },
+  { id: 3, name: "Pink Bear Games", url: "https://pinkbeargames.com/", type: "pixel", bg: "#FBF6E9" },
+  { id: 4, name: "Cionet Solutions", url: "https://cionet.com/", type: "text", label: "CIONET", color: "#0E7490", bg: "#ECFEFF" },
+  { id: 5, name: "Keywords Studios", url: "https://www.keywordsstudios.com/", type: "text", label: "KEYWORDS", color: "#DC2626", bg: "#FEF2F2" },
+  { id: 6, name: "Dominos Pizza", url: "https://www.dominos.com.mx/", type: "text", label: "DOMINO'S", color: "#1E3A8A", bg: "#EFF6FF" },
+  { id: 7, name: "Vips", url: "https://vips.com.mx/", type: "text", label: "VIPS", color: "#B45309", bg: "#FFFBEB" },
+  { id: 8, name: "Liverpool", url: "https://www.liverpool.com.mx/", type: "text", label: "LIVERPOOL", color: "#BE185D", bg: "#FDF2F8" },
+  { id: 9, name: "Universidad Amerike", url: "https://amerike.edu.mx/", type: "text", label: "AMERIKE", color: "#1E3A8A", bg: "#F1F5F9" },
+  { id: 10, name: "GamaCon", url: "#", type: "text", label: "GAMACON", color: "#7C3AED", bg: "#F5F3FF" },
+  { id: 11, name: "GameJam Plus", url: "https://gamejamplus.com/", type: "text", label: "GJ+", color: "#2D4A2B", bg: "#F0FDF4" }
 ];
 
 export const events = [
   {
     id: 1,
-    title: "Global Game Jam",
-    role: "Participante - Gameplay Programmer",
-    date: "Anual",
-    location: "Remoto / Local",
-    description: "Participación recurrente en la Global Game Jam creando prototipos jugables en 48 horas junto a equipos multidisciplinarios.",
+    title: "GameJam Plus",
+    role: "Participante · Gameplay Programmer",
+    date: "2024 — 2025",
+    location: "México · Global",
+    description: "Participación en ediciones consecutivas de GameJam Plus, la jam internacional de mayor alcance en LATAM. Desarrollo de prototipos jugables en formato equipo durante fines de semana intensivos.",
     tag: "Game Jam",
     icon: "trophy"
   },
   {
     id: 2,
-    title: "Ludum Dare",
-    role: "Solo Developer",
-    date: "Multiple",
-    location: "Online",
-    description: "Jams en solitario de 48 horas para experimentar con mecánicas, prototipado rápido y pulido en sprints cortos.",
-    tag: "Game Jam",
-    icon: "trophy"
+    title: "Latin American Showcase",
+    role: "Expositor",
+    date: "Reciente",
+    location: "LATAM",
+    description: "Showcase regional para devs latinoamericanos donde presenté proyectos del estudio y establecí conexiones con publishers y otros estudios de la región.",
+    tag: "Expo",
+    icon: "award"
   },
   {
     id: 3,
-    title: "VR Development Workshop",
-    role: "Asistente & Aprendizaje",
-    date: "2024",
-    location: "Online",
-    description: "Formación intensiva en desarrollo XR para Unity aplicada posteriormente al proyecto VR Helsing.",
-    tag: "Workshop",
-    icon: "book"
+    title: "Electronic Game Show (EGS)",
+    role: "Asistente & Networking",
+    date: "Anual",
+    location: "Ciudad de México",
+    description: "Uno de los eventos gamer más grandes de México. Asistencia a paneles técnicos, networking con estudios y publishers, y exploración de tendencias de la industria.",
+    tag: "Expo",
+    icon: "award"
   },
   {
     id: 4,
-    title: "Publicación en Steam",
-    role: "Lanzamiento de VR Helsing",
-    date: "2024",
-    location: "Global",
-    description: "Hito de publicación y soporte post-lanzamiento de VR Helsing en la tienda de Steam con integración de logros y stats.",
+    title: "Gamergy",
+    role: "Asistente",
+    date: "Reciente",
+    location: "LATAM",
+    description: "Festival multiplataforma de videojuegos, esports y cultura gamer. Contacto con comunidades de jugadores competitivos y publishers mobile.",
     tag: "Expo",
     icon: "award"
   },
   {
     id: 5,
-    title: "Publicaciones en Google Play",
-    role: "Lanzamiento de títulos mobile",
-    date: "2023 - 2024",
-    location: "Global",
-    description: "Proceso completo de publicación, certificación y mantenimiento de Crazy Delivery, Patito y Dou Evoluciones en Google Play.",
-    tag: "Expo",
-    icon: "award"
+    title: "Pixelatl",
+    role: "Asistente · Industria",
+    date: "Anual",
+    location: "Cuernavaca, México",
+    description: "Festival de animación, cine y videojuegos. Asistencia al track de videojuegos con paneles de estudios latinoamericanos referentes y networking con publishers.",
+    tag: "Conferencia",
+    icon: "mic"
   },
   {
     id: 6,
-    title: "Comunidad GameDev",
-    role: "Networking y colaboración",
-    date: "Continuo",
-    location: "Remoto",
-    description: "Colaboración continua con colegas de TrashGamez, Arakuma Studios y PinkBear Games en proyectos cross-studio y mentoría técnica.",
-    tag: "Comunidad",
-    icon: "users"
+    title: "GCMX · Game Conference México",
+    role: "Asistente · Industria",
+    date: "Anual",
+    location: "Ciudad de México",
+    description: "Conferencia profesional enfocada en el desarrollo de videojuegos en México. Charlas técnicas, business y paneles con estudios nacionales e internacionales.",
+    tag: "Conferencia",
+    icon: "mic"
+  },
+  {
+    id: 7,
+    title: "Liverpool Gaming Fest",
+    role: "Participante",
+    date: "Reciente",
+    location: "Ciudad de México",
+    description: "Festival corporativo de gaming y videojuegos organizado por Liverpool. Participación como desarrollador invitado mostrando proyectos y colaborando con el equipo de la marca.",
+    tag: "Expo",
+    icon: "award"
   }
 ];

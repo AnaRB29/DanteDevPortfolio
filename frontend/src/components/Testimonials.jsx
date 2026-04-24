@@ -1,7 +1,7 @@
 import { companies } from "../data/mock";
 import { ExternalLink } from "lucide-react";
 
-// Pixel placeholder for PinkBear (a tiny pink bear face built with rects)
+// Pixel placeholder for Pink Bear Games
 const PinkBearPixel = () => {
   const S = 8;
   const px = (x, y, c, w = 1, h = 1) => (
@@ -10,7 +10,6 @@ const PinkBearPixel = () => {
   const PINK = "#F5A3C7";
   const DARK = "#C97BA5";
   const EYE = "#2D1B2E";
-  const NOSE = "#2D1B2E";
   return (
     <svg width="128" height="128" viewBox="0 0 112 112" className="pixelated">
       {/* Ears */}
@@ -27,42 +26,75 @@ const PinkBearPixel = () => {
       {px(8, 5, EYE, 2, 2)}
       {px(4, 5, "#FBF6E9", 1, 1)}
       {px(9, 5, "#FBF6E9", 1, 1)}
-      {/* Snout area */}
+      {/* Snout */}
       {px(5, 7, "#FBF6E9", 3, 2)}
-      {px(6, 7, NOSE, 1, 1)}
+      {px(6, 7, EYE, 1, 1)}
     </svg>
   );
 };
 
-const LogoCard = ({ company }) => (
-  <a
-    href={company.url}
-    target="_blank"
-    rel="noreferrer"
-    className="group shrink-0 w-[280px] md:w-[320px] mx-4 bg-[#FBF6E9] border-[4px] border-[#1A2F1A] p-6 pixel-shadow transition-transform duration-200"
-    style={{ background: company.bg }}
+const TextLogo = ({ label, color }) => (
+  <div
+    className="w-full h-full flex items-center justify-center px-4"
+    style={{ color }}
   >
-    <div className="h-40 flex items-center justify-center mb-4">
-      {company.logo ? (
+    <span
+      className="pixel-font text-center leading-tight"
+      style={{
+        fontSize: label.length > 8 ? 14 : label.length > 6 ? 18 : 22,
+        textShadow: "3px 3px 0 rgba(26,47,26,0.15)"
+      }}
+    >
+      {label}
+    </span>
+  </div>
+);
+
+const LogoCard = ({ company }) => {
+  const Content = () => {
+    if (company.type === "image") {
+      return (
         <img
           src={company.logo}
           alt={company.name}
           className="max-h-full max-w-full object-contain"
           loading="lazy"
         />
-      ) : (
-        <PinkBearPixel />
-      )}
-    </div>
-    <div className="border-t-[3px] border-dashed border-[#1A2F1A]/30 pt-3 flex items-center justify-between">
-      <span className="pixel-font text-[10px] text-[#1A2F1A]">{company.name.toUpperCase()}</span>
-      <ExternalLink size={14} className="text-[#6B4423] group-hover:text-[#D97706] transition-colors" />
-    </div>
-  </a>
-);
+      );
+    }
+    if (company.type === "pixel") return <PinkBearPixel />;
+    return <TextLogo label={company.label} color={company.color} />;
+  };
+
+  const isLink = company.url && company.url !== "#";
+  const Wrapper = isLink ? "a" : "div";
+  const wrapperProps = isLink
+    ? { href: company.url, target: "_blank", rel: "noreferrer" }
+    : {};
+
+  return (
+    <Wrapper
+      {...wrapperProps}
+      className="group shrink-0 w-[280px] md:w-[300px] mx-4 border-[4px] border-[#1A2F1A] p-6 pixel-shadow transition-transform duration-200"
+      style={{ background: company.bg }}
+    >
+      <div className="h-32 flex items-center justify-center mb-4">
+        <Content />
+      </div>
+      <div className="border-t-[3px] border-dashed border-[#1A2F1A]/30 pt-3 flex items-center justify-between">
+        <span className="pixel-font text-[10px] text-[#1A2F1A] truncate mr-2">
+          {company.name.toUpperCase()}
+        </span>
+        {isLink && (
+          <ExternalLink size={14} className="text-[#6B4423] group-hover:text-[#D97706] transition-colors shrink-0" />
+        )}
+      </div>
+    </Wrapper>
+  );
+};
 
 const Companies = () => {
-  // Duplicate list for seamless marquee loop
+  // Triple the list for a smooth seamless loop
   const loop = [...companies, ...companies, ...companies];
 
   return (
@@ -73,10 +105,10 @@ const Companies = () => {
           <span className="pixel-font text-[10px] text-[#6B4423]">CHAPTER 05</span>
         </div>
         <h2 className="pixel-font text-[22px] md:text-[30px] text-[#1A2F1A] section-title-underline">
-          Estudios aliados
+          Marcas &amp; estudios aliados
         </h2>
-        <p className="retro-font text-[20px] text-[#6B4423] mt-4 max-w-xl">
-          Equipos con los que he desarrollado y publicado juegos. Cada logo es una aventura compartida en el bosque.
+        <p className="retro-font text-[20px] text-[#6B4423] mt-4 max-w-2xl">
+          Equipos, clientes e instituciones con los que he desarrollado juegos, experiencias y herramientas. Cada logo es una aventura compartida.
         </p>
       </div>
 
@@ -86,7 +118,6 @@ const Companies = () => {
             <LogoCard key={`${c.id}-${i}`} company={c} />
           ))}
         </div>
-        {/* Fades on edges */}
         <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#F5EFE0] to-transparent" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#F5EFE0] to-transparent" />
       </div>

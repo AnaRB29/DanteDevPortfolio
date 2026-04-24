@@ -1,5 +1,5 @@
 import { experience } from "../data/mock";
-import { Briefcase, Wrench, Code, GraduationCap } from "lucide-react";
+import { Briefcase, Wrench, Code, GraduationCap, MapPin, ExternalLink } from "lucide-react";
 
 const iconMap = {
   briefcase: Briefcase,
@@ -20,13 +20,13 @@ const Experience = () => {
           <h2 className="pixel-font text-[22px] md:text-[30px] text-[#FBF6E9] section-title-underline">
             Misiones completadas
           </h2>
-          <p className="retro-font text-[20px] text-[#F5EFE0]/80 mt-4 max-w-xl">
-            Una línea de tiempo de los mundos donde he puesto pezuñas hasta hoy.
+          <p className="retro-font text-[20px] text-[#F5EFE0]/80 mt-4 max-w-2xl">
+            Mi recorrido profesional: estudios, clientes y formación académica desde 2022 hasta hoy.
           </p>
         </div>
 
         <div className="relative">
-          {/* Pixel dashed line */}
+          {/* Dashed vertical line */}
           <div
             className="absolute left-6 md:left-1/2 top-2 bottom-2 w-[3px] -ml-[1.5px]"
             style={{
@@ -51,7 +51,22 @@ const Experience = () => {
                     <div className="bg-[#FBF6E9] text-[#1A2F1A] border-[4px] border-[#FBF6E9] p-5 pixel-shadow inline-block w-full">
                       <div className="retro-font text-[16px] text-[#6B4423] mb-1">{exp.period}</div>
                       <h3 className="pixel-font text-[12px] text-[#1A2F1A] leading-snug mb-2">{exp.role}</h3>
-                      <div className="retro-font text-[18px] text-[#D97706] mb-3">@ {exp.company}</div>
+                      <div className="retro-font text-[18px] text-[#D97706] mb-1">
+                        {exp.url ? (
+                          <a href={exp.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 hover:underline">
+                            @ {exp.company}
+                            <ExternalLink size={12} />
+                          </a>
+                        ) : (
+                          <span>@ {exp.company}</span>
+                        )}
+                      </div>
+                      {exp.location && (
+                        <div className={`retro-font text-[14px] text-[#6B4423] mb-3 inline-flex items-center gap-1 ${isLeft ? "md:flex-row-reverse" : ""}`}>
+                          <MapPin size={12} />
+                          {exp.location}
+                        </div>
+                      )}
                       <p className="body-font text-[14px] text-[#1F2937]/90 leading-relaxed">{exp.description}</p>
                     </div>
                   </div>
