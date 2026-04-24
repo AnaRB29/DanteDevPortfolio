@@ -177,16 +177,16 @@ export const experience = [
 // `type: "image"` uses /public/logos files; `type: "text"` renders a pixel-style wordmark.
 export const companies = [
   { id: 1, name: "Trash Gamez", url: "http://trashgamez.net/", type: "image", logo: "/logos/trashgamez.png", bg: "#FBF6E9" },
-  { id: 2, name: "Arakuma Studio", url: "https://arakuma.io/", type: "image", logo: "/logos/arakuma.png", bg: "#FBF6E9" },
+  { id: 2, name: "Arakuma Studio", url: "https://arakuma.io/", type: "image", logo: "/logos/arakuma.png", bg: "#7C3AED" },
   { id: 3, name: "Pink Bear Games", url: "https://pinkbeargames.com/", type: "pixel", bg: "#FBF6E9" },
   { id: 4, name: "Cionet Solutions", url: "https://cionet.com/", type: "text", label: "CIONET", color: "#0E7490", bg: "#ECFEFF" },
   { id: 5, name: "Keywords Studios", url: "https://www.keywordsstudios.com/", type: "text", label: "KEYWORDS", color: "#DC2626", bg: "#FEF2F2" },
-  { id: 6, name: "Dominos Pizza", url: "https://www.dominos.com.mx/", type: "text", label: "DOMINO'S", color: "#1E3A8A", bg: "#EFF6FF" },
+  { id: 6, name: "Dominos Pizza", url: "https://www.dominos.com.mx/", type: "image", logo: "/logos/dominos.png", bg: "#FBF6E9" },
   { id: 7, name: "Vips", url: "https://vips.com.mx/", type: "text", label: "VIPS", color: "#B45309", bg: "#FFFBEB" },
   { id: 8, name: "Liverpool", url: "https://www.liverpool.com.mx/", type: "text", label: "LIVERPOOL", color: "#BE185D", bg: "#FDF2F8" },
-  { id: 9, name: "Universidad Amerike", url: "https://amerike.edu.mx/", type: "text", label: "AMERIKE", color: "#1E3A8A", bg: "#F1F5F9" },
-  { id: 10, name: "GamaCon", url: "#", type: "text", label: "GAMACON", color: "#7C3AED", bg: "#F5F3FF" },
-  { id: 11, name: "GameJam Plus", url: "https://gamejamplus.com/", type: "text", label: "GJ+", color: "#2D4A2B", bg: "#F0FDF4" }
+  { id: 9, name: "Universidad Amerike", url: "https://amerike.edu.mx/", type: "image", logo: "/logos/amerike.png", bg: "#0F0F10" },
+  { id: 10, name: "GamaCon", url: "#", type: "image", logo: "/logos/gamacon.png", bg: "#1A1A1F" },
+  { id: 11, name: "GameJam Plus", url: "https://gamejamplus.com/", type: "image", logo: "/logos/gamejamplus.png", bg: "#F59EAC" }
 ];
 
 export const events = [

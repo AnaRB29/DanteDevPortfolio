@@ -75,13 +75,15 @@ const LogoCard = ({ company }) => {
   return (
     <Wrapper
       {...wrapperProps}
-      className="group shrink-0 w-[280px] md:w-[300px] mx-4 border-[4px] border-[#1A2F1A] p-6 pixel-shadow transition-transform duration-200"
-      style={{ background: company.bg }}
+      className="group shrink-0 w-[280px] md:w-[300px] mx-4 border-[4px] border-[#1A2F1A] pixel-shadow transition-transform duration-200 overflow-hidden bg-[#FBF6E9] flex flex-col"
     >
-      <div className="h-32 flex items-center justify-center mb-4">
+      <div
+        className="h-36 flex items-center justify-center p-4 border-b-[3px] border-[#1A2F1A]"
+        style={{ background: company.bg }}
+      >
         <Content />
       </div>
-      <div className="border-t-[3px] border-dashed border-[#1A2F1A]/30 pt-3 flex items-center justify-between">
+      <div className="px-4 py-3 flex items-center justify-between bg-[#FBF6E9]">
         <span className="pixel-font text-[10px] text-[#1A2F1A] truncate mr-2">
           {company.name.toUpperCase()}
         </span>
