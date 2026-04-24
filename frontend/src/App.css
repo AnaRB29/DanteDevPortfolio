@@ -179,6 +179,19 @@
     radial-gradient(1px 1px at 90% 25%, #FBF6E9 50%, transparent 51%);
 }
 
+/* Logo marquee */
+@keyframes marquee-slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-100% / 3)); }
+}
+.marquee-track {
+  animation: marquee-slide 28s linear infinite;
+  will-change: transform;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
 .tag-pill {
   font-family: 'VT323', monospace;
   font-size: 14px;

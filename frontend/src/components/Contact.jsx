@@ -11,7 +11,8 @@ const socialIcons = {
   GitHub: Github,
   LinkedIn: Linkedin,
   Twitter: Twitter,
-  "Itch.io": Gamepad2
+  "Itch.io": Gamepad2,
+  Email: Mail
 };
 
 const Contact = () => {

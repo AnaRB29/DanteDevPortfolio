@@ -6,11 +6,11 @@ const Footer = () => (
       <div className="grid md:grid-cols-3 gap-8 items-center">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-[#D97706] pixel-border-thin flex items-center justify-center">
-            <span className="pixel-font text-[10px] text-[#1A2F1A]">AM</span>
+            <span className="pixel-font text-[10px] text-[#1A2F1A]">DD</span>
           </div>
           <div>
-            <div className="pixel-font text-[11px]">ALFONSO MARTÍN</div>
-            <div className="retro-font text-[16px] text-[#F5EFE0]/70">game.dev · raccoon powered</div>
+            <div className="pixel-font text-[11px]">DANTE · GAMEDEV</div>
+            <div className="retro-font text-[16px] text-[#F5EFE0]/70">raccoon powered</div>
           </div>
         </div>
 
@@ -19,7 +19,7 @@ const Footer = () => (
         </div>
 
         <div className="md:text-right retro-font text-[16px] text-[#F5EFE0]/70">
-          © {new Date().getFullYear()} Alfonso Martín. Todos los mapaches reservados.
+          © {new Date().getFullYear()} Dante. Todos los mapaches reservados.
         </div>
       </div>
     </div>

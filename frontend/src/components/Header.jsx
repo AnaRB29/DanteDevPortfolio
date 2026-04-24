@@ -30,10 +30,10 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-4 flex items-center justify-between">
         <a href="#hero" className="flex items-center gap-3 group">
           <div className="w-10 h-10 bg-[#2D4A2B] pixel-border-thin flex items-center justify-center">
-            <span className="pixel-font text-[10px] text-[#FBF6E9]">AM</span>
+            <span className="pixel-font text-[10px] text-[#FBF6E9]">DD</span>
           </div>
           <div className="hidden sm:block">
-            <div className="pixel-font text-[11px] text-[#1A2F1A] leading-tight">ALFONSO</div>
+            <div className="pixel-font text-[11px] text-[#1A2F1A] leading-tight">DANTE</div>
             <div className="retro-font text-[16px] text-[#6B4423] leading-tight">game.dev</div>
           </div>
         </a>

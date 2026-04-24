@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { projects } from "../data/mock";
-import { Gamepad2, Calendar, Tag, X } from "lucide-react";
+import { Gamepad2, Calendar, Tag, X, ExternalLink } from "lucide-react";
 
 const Projects = () => {
   const [filter, setFilter] = useState("Todos");
@@ -21,7 +21,7 @@ const Projects = () => {
               Arcade de proyectos
             </h2>
             <p className="retro-font text-[20px] text-[#6B4423] mt-4 max-w-xl">
-              Insertar moneda para explorar. Desde prototipos de game jam hasta herramientas internas de estudio.
+              Insertar moneda para explorar. Títulos publicados en Steam, Google Play y más.
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -51,42 +51,46 @@ const Projects = () => {
   );
 };
 
-const ProjectThumb = ({ color, label }) => (
+const ProjectThumb = ({ project }) => (
   <div
-    className="relative overflow-hidden border-b-[4px] border-[#1A2F1A]"
-    style={{ background: color, height: 180 }}
+    className="relative overflow-hidden border-b-[4px] border-[#1A2F1A] bg-[#1A2F1A]"
+    style={{ height: 200 }}
   >
-    {/* Pixel grid overlay */}
+    {project.image ? (
+      <img
+        src={project.image}
+        alt={project.title}
+        className="w-full h-full object-cover"
+        loading="lazy"
+      />
+    ) : (
+      <div className="w-full h-full" style={{ background: project.color }} />
+    )}
+    {/* Scanlines overlay */}
     <div
-      className="absolute inset-0 opacity-20"
+      className="absolute inset-0 pointer-events-none opacity-20"
       style={{
-        backgroundImage:
-          "linear-gradient(0deg, rgba(0,0,0,.25) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.25) 1px, transparent 1px)",
-        backgroundSize: "12px 12px"
+        backgroundImage: "repeating-linear-gradient(0deg, rgba(0,0,0,0.3) 0px, rgba(0,0,0,0.3) 1px, transparent 1px, transparent 3px)"
       }}
     />
-    {/* Pixel art silhouette */}
-    <svg viewBox="0 0 16 12" className="pixelated absolute inset-0 w-full h-full opacity-90" preserveAspectRatio="xMidYMid meet">
-      <rect x="4" y="3" width="8" height="1" fill="#F5EFE0" />
-      <rect x="3" y="4" width="10" height="3" fill="#F5EFE0" />
-      <rect x="4" y="7" width="8" height="1" fill="#F5EFE0" />
-      <rect x="5" y="4" width="1" height="1" fill="#1A1A1A" />
-      <rect x="10" y="4" width="1" height="1" fill="#1A1A1A" />
-      <rect x="7" y="5" width="2" height="1" fill="#1A1A1A" />
-    </svg>
-    <span className="absolute top-3 left-3 pixel-font text-[9px] bg-[#1A2F1A] text-[#FBF6E9] px-2 py-1">
-      {label}
+    <span className="absolute top-3 left-3 pixel-font text-[9px] bg-[#1A2F1A] text-[#FBF6E9] px-2 py-1 border-[2px] border-[#FBF6E9]">
+      {project.engine.toUpperCase()}
     </span>
+    {project.links && project.links.length > 0 && (
+      <span className="absolute top-3 right-3 pixel-font text-[9px] bg-[#D97706] text-[#FBF6E9] px-2 py-1 border-[2px] border-[#FBF6E9]">
+        {project.links.length} STORE{project.links.length > 1 ? "S" : ""}
+      </span>
+    )}
   </div>
 );
 
 const ProjectCard = ({ project, onClick }) => (
   <article
     onClick={onClick}
-    className="bg-[#FBF6E9] border-[4px] border-[#1A2F1A] pixel-shadow cursor-pointer"
+    className="bg-[#FBF6E9] border-[4px] border-[#1A2F1A] pixel-shadow cursor-pointer flex flex-col"
   >
-    <ProjectThumb color={project.color} label={project.engine.toUpperCase()} />
-    <div className="p-5">
+    <ProjectThumb project={project} />
+    <div className="p-5 flex flex-col flex-1">
       <div className="flex items-center gap-2 mb-2">
         <Calendar size={12} className="text-[#6B4423]" />
         <span className="retro-font text-[16px] text-[#6B4423]">{project.year}</span>
@@ -95,7 +99,7 @@ const ProjectCard = ({ project, onClick }) => (
       </div>
       <h3 className="pixel-font text-[13px] text-[#1A2F1A] leading-snug mb-3">{project.title}</h3>
       <p className="body-font text-[14px] text-[#1F2937]/80 leading-relaxed mb-4 line-clamp-3">{project.description}</p>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 mt-auto">
         {project.tags.slice(0, 3).map((t) => (
           <span key={t} className="tag-pill">{t}</span>
         ))}
@@ -106,14 +110,14 @@ const ProjectCard = ({ project, onClick }) => (
 
 const ProjectModal = ({ project, onClose }) => (
   <div
-    className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-[#1A2F1A]/80"
+    className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-[#1A2F1A]/85"
     onClick={onClose}
   >
     <div
       className="max-w-2xl w-full bg-[#FBF6E9] border-[4px] border-[#1A2F1A] pixel-shadow max-h-[90vh] overflow-y-auto"
       onClick={(e) => e.stopPropagation()}
     >
-      <ProjectThumb color={project.color} label={project.engine.toUpperCase()} />
+      <ProjectThumb project={project} />
       <div className="p-6">
         <div className="flex items-start justify-between gap-4 mb-4">
           <div>
@@ -136,6 +140,25 @@ const ProjectModal = ({ project, onClose }) => (
               {project.tags.map((t) => <span key={t} className="tag-pill">{t}</span>)}
             </div>
           </div>
+          {project.links && project.links.length > 0 && (
+            <div>
+              <div className="pixel-font text-[9px] text-[#6B4423] mb-2">DISPONIBLE EN</div>
+              <div className="flex flex-wrap gap-3">
+                {project.links.map((l) => (
+                  <a
+                    key={l.store}
+                    href={l.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="pixel-button inline-flex items-center gap-2"
+                  >
+                    <ExternalLink size={14} />
+                    {l.store}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { skills } from "../data/mock";
-import { Code2, Cpu, Wrench } from "lucide-react";
+import { Code2, Cpu, Wrench, Sparkles } from "lucide-react";
 
 const categoryIcons = {
   "Lenguajes": Code2,
   "Motores": Cpu,
-  "Herramientas": Wrench
+  "Herramientas": Wrench,
+  "Disciplinas": Sparkles
 };
 
 const Skills = () => {
@@ -31,7 +32,7 @@ const Skills = () => {
           </div>
           <div className="flex flex-wrap gap-2">
             {categories.map((cat) => {
-              const Icon = categoryIcons[cat];
+              const Icon = categoryIcons[cat] || Sparkles;
               return (
                 <button
                   key={cat}
