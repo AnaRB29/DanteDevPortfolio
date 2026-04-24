@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useLang } from "../i18n/LanguageContext";
 import { translations } from "../i18n/translations";
+import { LangToggle } from "./Flags";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -57,31 +58,13 @@ const Header = () => {
             </a>
           ))}
 
-          <button
-            onClick={toggle}
-            aria-label="Toggle language"
-            className={`retro-font text-[16px] ml-3 px-3 py-2 border-[3px] border-[#271914] inline-flex items-center gap-2 transition-transform duration-150 hover:-translate-y-[1px] ${
-              scrolled
-                ? "bg-[#FBF6E9] text-[#271914]"
-                : "bg-[#271914] text-[#FBF6E9]"
-            }`}
-          >
-            <Globe size={14} />
-            <span className="pixel-font text-[9px]">{t.common.langToggle}</span>
-          </button>
+          <LangToggle lang={lang} onToggle={toggle} scrolled={scrolled} />
 
           <a href="#contact" className="pixel-button ml-3">{t.nav.hireMe}</a>
         </nav>
 
         <div className="flex items-center gap-2 lg:hidden">
-          <button
-            onClick={toggle}
-            aria-label="Toggle language"
-            className="retro-font text-[14px] px-2 py-2 border-[3px] border-[#271914] bg-[#FBF6E9] text-[#271914] inline-flex items-center gap-1"
-          >
-            <Globe size={12} />
-            <span className="pixel-font text-[8px]">{t.common.langToggle}</span>
-          </button>
+          <LangToggle lang={lang} onToggle={toggle} scrolled={true} />
           <button
             onClick={() => setOpen(!open)}
             className="w-10 h-10 bg-[#724830] text-[#FBF6E9] flex items-center justify-center pixel-border-thin"
