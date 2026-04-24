@@ -180,13 +180,14 @@ export const companies = [
   { id: 2, name: "Arakuma Studio", url: "https://arakuma.io/", type: "image", logo: "/logos/arakuma.png", bg: "#7C3AED" },
   { id: 3, name: "Pink Bear Games", url: "https://pinkbeargames.com/", type: "pixel", bg: "#FBF6E9" },
   { id: 4, name: "Cionet Solutions", url: "https://cionet.com/", type: "text", label: "CIONET", color: "#0E7490", bg: "#ECFEFF" },
-  { id: 5, name: "Keywords Studios", url: "https://www.keywordsstudios.com/", type: "text", label: "KEYWORDS", color: "#DC2626", bg: "#FEF2F2" },
+  { id: 5, name: "Keywords Studios", url: "https://www.keywordsstudios.com/", type: "image", logo: "/logos/keywords.png", bg: "#FBF6E9" },
   { id: 6, name: "Dominos Pizza", url: "https://www.dominos.com.mx/", type: "image", logo: "/logos/dominos.png", bg: "#FBF6E9" },
   { id: 7, name: "Vips", url: "https://vips.com.mx/", type: "text", label: "VIPS", color: "#B45309", bg: "#FFFBEB" },
-  { id: 8, name: "Liverpool", url: "https://www.liverpool.com.mx/", type: "text", label: "LIVERPOOL", color: "#BE185D", bg: "#FDF2F8" },
+  { id: 8, name: "Liverpool", url: "https://www.liverpool.com.mx/", type: "image", logo: "/logos/liverpool.png", bg: "#E6007E" },
   { id: 9, name: "Universidad Amerike", url: "https://amerike.edu.mx/", type: "image", logo: "/logos/amerike.png", bg: "#0F0F10" },
   { id: 10, name: "GamaCon", url: "#", type: "image", logo: "/logos/gamacon.png", bg: "#1A1A1F" },
-  { id: 11, name: "GameJam Plus", url: "https://gamejamplus.com/", type: "image", logo: "/logos/gamejamplus.png", bg: "#F59EAC" }
+  { id: 11, name: "GameJam Plus", url: "https://gamejamplus.com/", type: "image", logo: "/logos/gamejamplus.png", bg: "#F59EAC" },
+  { id: 12, name: "GCMX · Game Conference México", url: "#", type: "image", logo: "/logos/gcmx.png", bg: "#1A1A1F" }
 ];
 
 export const events = [
