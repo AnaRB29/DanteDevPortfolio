@@ -181,12 +181,13 @@
 
 /* Logo marquee */
 @keyframes marquee-slide {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-100% / 3)); }
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(calc(-100% / 3), 0, 0); }
 }
 .marquee-track {
-  animation: marquee-slide 14s linear infinite;
+  animation: marquee-slide 8s linear infinite;
   will-change: transform;
+  backface-visibility: hidden;
 }
 .marquee-track:hover {
   animation-play-state: paused;
