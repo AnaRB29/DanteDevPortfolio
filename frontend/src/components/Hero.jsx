@@ -119,10 +119,15 @@ const Hero = () => {
         <div className="lg:col-span-5 z-10 flex justify-center">
           <div className="relative">
             <div className="bg-[#FBF6E9] p-6 pixel-shadow border-[4px] border-[#271914]">
-              <BigPixelRaccoon />
+              <img
+                src="/dante.png"
+                alt="Dante the raccoon"
+                className="pixelated block mx-auto"
+                style={{ width: "216px", height: "auto", imageRendering: "pixelated" }}
+              />
               <div className="text-center mt-3">
                 <div className="pixel-font text-[10px] text-[#271914]">LVL 99</div>
-                <div className="retro-font text-[18px] text-[#B68669]">Raccoon Dev</div>
+                <div className="retro-font text-[18px] text-[#B68669]">Dante · Raccoon Dev</div>
               </div>
             </div>
             <div className="absolute -top-4 -right-4 bg-[#D54527] text-[#FBF6E9] pixel-font text-[9px] px-3 py-2 border-[3px] border-[#271914] rotate-6">
