@@ -179,7 +179,6 @@ export const companies = [
   { id: 1, name: "Trash Gamez", url: "http://trashgamez.net/", type: "image", logo: "/logos/trashgamez.png", bg: "#F7E1EC" },
   { id: 2, name: "Arakuma Studio", url: "https://arakuma.io/", type: "image", logo: "/logos/arakuma.png", bg: "#7C3AED" },
   { id: 3, name: "Pink Bear Games", url: "https://pinkbeargames.com/", type: "image", logo: "/logos/pinkbear.png", bg: "#FBF6E9" },
-  { id: 4, name: "Cionet Solutions", url: "https://cionet.com/", type: "text", label: "CIONET", color: "#0E7490", bg: "#ECFEFF" },
   { id: 5, name: "Keywords Studios", url: "https://www.keywordsstudios.com/", type: "image", logo: "/logos/keywords.png", bg: "#FBF6E9" },
   { id: 6, name: "Dominos Pizza", url: "https://www.dominos.com.mx/", type: "image", logo: "/logos/dominos.png", bg: "#FBF6E9" },
   { id: 7, name: "Vips", url: "https://vips.com.mx/", type: "image", logo: "/logos/vips.png", bg: "#7C3AED" },

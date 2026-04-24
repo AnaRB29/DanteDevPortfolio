@@ -185,7 +185,7 @@
   100% { transform: translateX(calc(-100% / 3)); }
 }
 .marquee-track {
-  animation: marquee-slide 28s linear infinite;
+  animation: marquee-slide 14s linear infinite;
   will-change: transform;
 }
 .marquee-track:hover {
