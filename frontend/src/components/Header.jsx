@@ -33,7 +33,7 @@ const Header = () => {
             <span className="pixel-font text-[10px] text-[#FBF6E9]">AM</span>
           </div>
           <div className="hidden sm:block">
-            <div className="pixel-font text-[11px] text-[#271914] leading-tight">ALFONSO</div>
+            <div className="pixel-font text-[11px] text-[#D54527] leading-tight">ALFONSO</div>
             <div className="retro-font text-[16px] text-[#B68669] leading-tight">aka dante · game.dev</div>
           </div>
         </a>
@@ -43,7 +43,11 @@ const Header = () => {
             <a
               key={l.href}
               href={l.href}
-              className="retro-font text-[18px] px-3 py-2 text-[#271914] hover:text-[#D54527] hover:bg-[#271914]/5 transition-colors duration-150"
+              className={`retro-font text-[18px] px-3 py-2 transition-colors duration-150 ${
+                scrolled
+                  ? "text-[#271914] hover:text-[#D54527] hover:bg-[#271914]/5"
+                  : "text-[#FBF6E9] hover:text-[#D54527]"
+              }`}
             >
               {l.label}
             </a>
