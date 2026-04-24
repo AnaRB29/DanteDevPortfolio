@@ -54,17 +54,17 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-[#1A2F1A] dark-forest-bg text-[#FBF6E9]">
+    <section id="contact" className="py-24 bg-[#271914] dark-forest-bg text-[#FBF6E9]">
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         <div className="mb-10">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-2 h-2 bg-[#D97706]" />
-            <span className="pixel-font text-[10px] text-[#D97706]">CHAPTER 07</span>
+            <div className="w-2 h-2 bg-[#D54527]" />
+            <span className="pixel-font text-[10px] text-[#D54527]">CHAPTER 07</span>
           </div>
           <h2 className="pixel-font text-[22px] md:text-[30px] text-[#FBF6E9] section-title-underline">
             ¿Empezamos una partida?
           </h2>
-          <p className="retro-font text-[20px] text-[#F5EFE0]/80 mt-4 max-w-2xl">
+          <p className="retro-font text-[20px] text-[#ECD2D2]/80 mt-4 max-w-2xl">
             ¿Tienes un proyecto, una herramienta o un prototipo que quieres darle forma? Déjame un mensaje y coordinamos.
           </p>
         </div>
@@ -73,8 +73,8 @@ const Contact = () => {
           <div className="lg:col-span-2 space-y-5">
             <InfoCard icon={Mail} label="EMAIL" value={profile.email} />
             <InfoCard icon={MapPin} label="UBICACIÓN" value={profile.location} />
-            <div className="bg-[#FBF6E9] text-[#1A2F1A] border-[4px] border-[#FBF6E9] p-5 pixel-shadow">
-              <div className="pixel-font text-[10px] text-[#6B4423] mb-3">SOCIAL NETWORKS</div>
+            <div className="bg-[#FBF6E9] text-[#271914] border-[4px] border-[#FBF6E9] p-5 pixel-shadow">
+              <div className="pixel-font text-[10px] text-[#B68669] mb-3">SOCIAL NETWORKS</div>
               <div className="grid grid-cols-2 gap-3">
                 {profile.socials.map((s) => {
                   const Icon = socialIcons[s.name] || Github;
@@ -84,7 +84,7 @@ const Contact = () => {
                       href={s.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex items-center gap-3 border-[3px] border-[#1A2F1A] p-3 hover:bg-[#D97706] hover:text-[#FBF6E9] transition-colors duration-150"
+                      className="flex items-center gap-3 border-[3px] border-[#271914] p-3 hover:bg-[#D54527] hover:text-[#FBF6E9] transition-colors duration-150"
                     >
                       <Icon size={16} />
                       <div>
@@ -100,7 +100,7 @@ const Contact = () => {
 
           <form
             onSubmit={handleSubmit}
-            className="lg:col-span-3 bg-[#FBF6E9] text-[#1A2F1A] border-[4px] border-[#FBF6E9] p-6 md:p-8 pixel-shadow space-y-5"
+            className="lg:col-span-3 bg-[#FBF6E9] text-[#271914] border-[4px] border-[#FBF6E9] p-6 md:p-8 pixel-shadow space-y-5"
           >
             <div className="grid md:grid-cols-2 gap-5">
               <Field label="Nombre" name="name" value={form.name} onChange={handleChange} placeholder="Tu nombre" />
@@ -108,14 +108,14 @@ const Contact = () => {
             </div>
             <Field label="Asunto" name="subject" value={form.subject} onChange={handleChange} placeholder="¿Sobre qué es?" />
             <div>
-              <label className="pixel-font text-[10px] text-[#6B4423] block mb-2">MENSAJE</label>
+              <label className="pixel-font text-[10px] text-[#B68669] block mb-2">MENSAJE</label>
               <textarea
                 name="message"
                 value={form.message}
                 onChange={handleChange}
                 rows={6}
                 placeholder="Cuenta tu idea, el stack, plazos..."
-                className="w-full border-[3px] border-[#1A2F1A] bg-[#F5EFE0] px-4 py-3 retro-font text-[18px] text-[#1A2F1A] focus:outline-none focus:bg-[#FBF6E9] focus:ring-4 focus:ring-[#D97706]/40"
+                className="w-full border-[3px] border-[#271914] bg-[#ECD2D2] px-4 py-3 retro-font text-[18px] text-[#271914] focus:outline-none focus:bg-[#FBF6E9] focus:ring-4 focus:ring-[#D54527]/40"
               />
             </div>
             <button type="submit" disabled={sending} className="pixel-button inline-flex items-center gap-2 disabled:opacity-60">
@@ -131,26 +131,26 @@ const Contact = () => {
 
 const Field = ({ label, name, value, onChange, placeholder, type = "text" }) => (
   <div>
-    <label className="pixel-font text-[10px] text-[#6B4423] block mb-2">{label.toUpperCase()}</label>
+    <label className="pixel-font text-[10px] text-[#B68669] block mb-2">{label.toUpperCase()}</label>
     <input
       name={name}
       type={type}
       value={value}
       onChange={onChange}
       placeholder={placeholder}
-      className="w-full border-[3px] border-[#1A2F1A] bg-[#F5EFE0] px-4 py-3 retro-font text-[18px] text-[#1A2F1A] focus:outline-none focus:bg-[#FBF6E9] focus:ring-4 focus:ring-[#D97706]/40"
+      className="w-full border-[3px] border-[#271914] bg-[#ECD2D2] px-4 py-3 retro-font text-[18px] text-[#271914] focus:outline-none focus:bg-[#FBF6E9] focus:ring-4 focus:ring-[#D54527]/40"
     />
   </div>
 );
 
 const InfoCard = ({ icon: Icon, label, value }) => (
-  <div className="bg-[#FBF6E9] text-[#1A2F1A] border-[4px] border-[#FBF6E9] p-5 pixel-shadow flex items-center gap-4">
-    <div className="w-12 h-12 bg-[#D97706] border-[3px] border-[#1A2F1A] flex items-center justify-center text-[#1A2F1A]">
+  <div className="bg-[#FBF6E9] text-[#271914] border-[4px] border-[#FBF6E9] p-5 pixel-shadow flex items-center gap-4">
+    <div className="w-12 h-12 bg-[#D54527] border-[3px] border-[#271914] flex items-center justify-center text-[#271914]">
       <Icon size={18} />
     </div>
     <div>
-      <div className="pixel-font text-[9px] text-[#6B4423]">{label}</div>
-      <div className="retro-font text-[18px] text-[#1A2F1A] mt-1">{value}</div>
+      <div className="pixel-font text-[9px] text-[#B68669]">{label}</div>
+      <div className="retro-font text-[18px] text-[#271914] mt-1">{value}</div>
     </div>
   </div>
 );

@@ -20,24 +20,24 @@ code {
 @layer base {
   :root {
     --background: 45 60% 95%;
-    --foreground: 0 0% 12%;
+    --foreground: 20 30% 11%;
     --card: 45 60% 95%;
-    --card-foreground: 0 0% 12%;
+    --card-foreground: 20 30% 11%;
     --popover: 45 60% 95%;
-    --popover-foreground: 0 0% 12%;
-    --primary: 118 27% 23%;
+    --popover-foreground: 20 30% 11%;
+    --primary: 23 41% 32%;
     --primary-foreground: 45 60% 95%;
-    --secondary: 30 48% 28%;
+    --secondary: 23 41% 32%;
     --secondary-foreground: 45 60% 95%;
-    --muted: 45 30% 88%;
-    --muted-foreground: 0 0% 35%;
-    --accent: 29 91% 44%;
+    --muted: 0 43% 87%;
+    --muted-foreground: 24 32% 45%;
+    --accent: 10 69% 49%;
     --accent-foreground: 45 60% 95%;
-    --destructive: 0 70% 45%;
+    --destructive: 1 76% 41%;
     --destructive-foreground: 45 60% 95%;
-    --border: 118 27% 15%;
-    --input: 45 30% 80%;
-    --ring: 118 27% 23%;
+    --border: 20 30% 11%;
+    --input: 0 43% 87%;
+    --ring: 23 41% 32%;
     --radius: 0rem;
   }
 }

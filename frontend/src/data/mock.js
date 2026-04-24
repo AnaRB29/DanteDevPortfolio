@@ -51,7 +51,7 @@ export const projects = [
     description: "Boomer-Shooter en Realidad Virtual. Controlas a Abraham Van Helsing, ex-cazador de monstruos que regresa de su retiro para detener al Dr. Frankenstein. Te enfrentas a oleadas de monstruos regenerados combinando biología y tecnología.",
     role: "Gameplay Programmer @ Trash Gamez",
     tags: ["C#", "Unity", "VR", "Shooter"],
-    color: "#6B4423",
+    color: "#B68669",
     image: "https://portfolio-dante-five.vercel.app/media/VRHelsing.png",
     links: [
       { store: "Steam", url: "https://store.steampowered.com/app/3540160/VR_Helsing/" },
@@ -67,7 +67,7 @@ export const projects = [
     description: "Juego arcade de conducción donde eres un repartidor de pizzas. Selecciona distintos tipos de vehículos y conduce de manera caótica por la ciudad entregando pedidos a contrarreloj.",
     role: "Gameplay Programmer @ Trash Gamez",
     tags: ["C#", "Unity", "Mobile", "Arcade"],
-    color: "#D97706",
+    color: "#D54527",
     image: "https://portfolio-dante-five.vercel.app/media/CrazyDelivery.png",
     links: [
       { store: "Google Play", url: "https://play.google.com/store/apps/details?id=com.TrashGamez.CrazyDelivery" }
@@ -82,7 +82,7 @@ export const projects = [
     description: "Juego educativo hecho para que padres, tutores y profesores puedan hablar acerca de los límites corporales con los niños. Incluye una guía para padres/tutores para acompañar el cuento. Proyecto galardonado con el Unity for Humanity award.",
     role: "Unity Developer @ Pink Bear Games",
     tags: ["C#", "Unity", "Mobile", "Educativo"],
-    color: "#E879A6",
+    color: "#D54527",
     image: "https://portfolio-dante-five.vercel.app/media/Patito.png",
     links: [
       { store: "Google Play", url: "https://play.google.com/store/apps/details?id=com.PinkBearGames.Patito" }
@@ -97,7 +97,7 @@ export const projects = [
     description: "Juego idle casual que te lleva a un viaje de combinaciones y mutaciones. Combina y evoluciona distintas especies del Dou de Benja Calero, descubre mutaciones y colecciona cartas únicas. Más de 200K descargas acumuladas.",
     role: "Unity Developer @ Arakuma Studio",
     tags: ["C#", "Unity", "Mobile", "Idle"],
-    color: "#3F5A3A",
+    color: "#B68669",
     image: "https://portfolio-dante-five.vercel.app/media/DouEvoluciones.png",
     links: [
       { store: "Google Play", url: "https://play.google.com/store/apps/details?id=com.ArakumaStudio.DouEvolutions" }
@@ -112,7 +112,7 @@ export const projects = [
     description: "Dungeon crawler lleno de acción con mazmorras generadas proceduralmente, monstruos mortales, jefes poderosos y tesoros ocultos. Juega como Farfadox o un repertorio de héroes peculiares con habilidades únicas.",
     role: "Unity Developer @ Arakuma Studio",
     tags: ["C#", "Unity", "Procedural", "RPG"],
-    color: "#2D4A2B",
+    color: "#724830",
     image: "https://portfolio-dante-five.vercel.app/media/NetherDungeons.png",
     links: [
       { store: "Steam", url: "https://play.google.com/store/apps/details?id=com.ArakumaStudio.NetherDungeons&hl=es_MX" }

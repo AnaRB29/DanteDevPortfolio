@@ -6,12 +6,12 @@ const PixelRaccoon = ({ facing = 1, walking = false }) => {
   // Colors
   const FUR = "#6B6B6B";
   const FUR_DARK = "#4A4A4A";
-  const FACE = "#F5EFE0";
+  const FACE = "#ECD2D2";
   const MASK = "#1A1A1A";
   const NOSE = "#1A1A1A";
   const EAR = "#5A5A5A";
   const TAIL = "#8A8A8A";
-  const OUTLINE = "#1A2F1A";
+  const OUTLINE = "#271914";
 
   const S = 4; // pixel size
   const px = (x, y, color, w = 1, h = 1) => (
@@ -141,8 +141,8 @@ const RaccoonCursor = () => {
           top: target.y - 4,
           width: 8,
           height: 8,
-          background: "#D97706",
-          border: "2px solid #1A2F1A",
+          background: "#D54527",
+          border: "2px solid #271914",
           pointerEvents: "none",
           zIndex: 9998,
           imageRendering: "pixelated"
