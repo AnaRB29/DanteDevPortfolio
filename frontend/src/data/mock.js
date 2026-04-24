@@ -176,13 +176,13 @@ export const experience = [
 // Brand cards — includes studios, clients and institutions.
 // `type: "image"` uses /public/logos files; `type: "text"` renders a pixel-style wordmark.
 export const companies = [
-  { id: 1, name: "Trash Gamez", url: "http://trashgamez.net/", type: "image", logo: "/logos/trashgamez.png", bg: "#FBF6E9" },
+  { id: 1, name: "Trash Gamez", url: "http://trashgamez.net/", type: "image", logo: "/logos/trashgamez.png", bg: "#F7E1EC" },
   { id: 2, name: "Arakuma Studio", url: "https://arakuma.io/", type: "image", logo: "/logos/arakuma.png", bg: "#7C3AED" },
-  { id: 3, name: "Pink Bear Games", url: "https://pinkbeargames.com/", type: "pixel", bg: "#FBF6E9" },
+  { id: 3, name: "Pink Bear Games", url: "https://pinkbeargames.com/", type: "image", logo: "/logos/pinkbear.png", bg: "#FBF6E9" },
   { id: 4, name: "Cionet Solutions", url: "https://cionet.com/", type: "text", label: "CIONET", color: "#0E7490", bg: "#ECFEFF" },
   { id: 5, name: "Keywords Studios", url: "https://www.keywordsstudios.com/", type: "image", logo: "/logos/keywords.png", bg: "#FBF6E9" },
   { id: 6, name: "Dominos Pizza", url: "https://www.dominos.com.mx/", type: "image", logo: "/logos/dominos.png", bg: "#FBF6E9" },
-  { id: 7, name: "Vips", url: "https://vips.com.mx/", type: "text", label: "VIPS", color: "#B45309", bg: "#FFFBEB" },
+  { id: 7, name: "Vips", url: "https://vips.com.mx/", type: "image", logo: "/logos/vips.png", bg: "#7C3AED" },
   { id: 8, name: "Liverpool", url: "https://www.liverpool.com.mx/", type: "image", logo: "/logos/liverpool.png", bg: "#E6007E" },
   { id: 9, name: "Universidad Amerike", url: "https://amerike.edu.mx/", type: "image", logo: "/logos/amerike.png", bg: "#0F0F10" },
   { id: 10, name: "GamaCon", url: "#", type: "image", logo: "/logos/gamacon.png", bg: "#1A1A1F" },
